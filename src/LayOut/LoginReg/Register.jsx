@@ -46,14 +46,14 @@ const Register = () => {
                         </div>
                     </div>
                     <div className="text-center ">
-                            <h1 className="mx-5">OR</h1>
+                        <h1 className="mx-5">OR</h1>
                     </div>
 
                     <div className="text-center ">
                         <h1 className=" text-xl"> Try with</h1>
                         <div className=" py-5 flex justify-between gap-4">
-                            <div><button> Google</button></div> 
-                            <div><button> Github</button></div> 
+                            <div><button> Google</button></div>
+                            <div><button> Github</button></div>
                         </div>
                     </div>
 
