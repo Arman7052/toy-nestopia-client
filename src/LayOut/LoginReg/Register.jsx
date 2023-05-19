@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
 
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Register = () => {
+    const {createUser,signInWithGoogle} = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo_Url =form.photo_url.value;
+        const password =form.password.value;
+        console.log(name,email,photo_Url,password);
+
+        createUser(email,password)
+        .then(result =>{
+            const user =result.user;
+            console.log(user);
+        })
+        .then(error =>console.log(error))
     }
     return (
         <>
@@ -20,19 +36,19 @@ const Register = () => {
                             <form onSubmit={handleRegister}>
                                 <div className="form-control py-2">
 
-                                    <input type=" Name" placeholder="Name" className="input input-bordered" />
+                                    <input type=" Name" placeholder="Name" name="name" className="input input-bordered" />
                                 </div>
                                 <div className="form-control py-2">
 
-                                    <input type="email" placeholder="Email" className="input input-bordered" required />
+                                    <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control py-2">
 
-                                    <input type="text" placeholder="Photo URl" className="input input-bordered" required />
+                                    <input type="url" placeholder="Photo_URl" name="photo_url" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control py-2">
 
-                                    <input type="password" placeholder="Password" className="input input-bordered" required />
+                                    <input type="password" placeholder="Password" name="password" className="input input-bordered" required />
 
                                 </div>
                                 <div className="form-control py-2 mt-6">
@@ -50,9 +66,11 @@ const Register = () => {
 
                     <div className="text-center ">
                         <h1 className=" text-xl"> Try with</h1>
-                        <div className=" py-5 flex justify-between gap-4">
-                            <div><button><FaGoogle></FaGoogle></button></div>
-                            <div><button><FaGithub></FaGithub></button></div>
+                        <div className=" py-5 text-2xl">
+                            <div className=''>
+                                <button onClick={signInWithGoogle} className=" btn lg:btn-wide btn-outline btn-error"><span className=' mr-2'><FaGoogle></FaGoogle> </span> Google</button>
+                            </div>
+
                         </div>
                     </div>
 
