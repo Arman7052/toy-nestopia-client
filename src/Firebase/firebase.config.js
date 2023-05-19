@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD1F6vvlfhTpTKpjyskrBCDDb6s_gGFCec",
-  authDomain: "toy-nestopia.firebaseapp.com",
-  projectId: "toy-nestopia",
-  storageBucket: "toy-nestopia.appspot.com",
-  messagingSenderId: "1054443611259",
-  appId: "1:1054443611259:web:fb10d21dc25d4c4c88eede"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
