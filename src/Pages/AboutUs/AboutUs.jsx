@@ -1,5 +1,6 @@
 import Footer from "../../LayOut/Shared/Footer/Footer";
 import Navbar from "../../LayOut/Shared/Header/Navbar";
+import Marquee from "react-fast-marquee";
 
 
 const AboutUs = () => {
@@ -26,10 +27,45 @@ const AboutUs = () => {
                 <p>
                     Join us at Toy Nestopia and embark on a journey of learning and discovery. Together, let's inspire young minds and nurture a lifelong love for learning through our innovative and educational toys.
                 </p>
+
+                <div className="">
+                    <Marquee>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/d5nNQdb/sci2.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/vhRHTLy/math1.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/9vqXwN1/sci3.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/1znWjrv/math2.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/VDdMcwM/sci1.jpg  " alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/98G93T2/math3.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/cDrsTpw/sci5.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/j6n3nXy/sci4.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/d5nNQdb/sci2.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/vhRHTLy/math1.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/9vqXwN1/sci3.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/1znWjrv/math2.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/VDdMcwM/sci1.jpg  " alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/98G93T2/math3.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/cDrsTpw/sci5.jpg" alt="" /></span>
+                    <span className=""><img className="h-20" src="https://i.ibb.co/j6n3nXy/sci4.jpg" alt="" /></span>
+                    </Marquee>
+                </div>
+
             </div>
             <Footer></Footer>
         </div>
     );
 };
+//  
+
+
+
+
+
+
+
+
+
+
+
+//
 
 export default AboutUs;
