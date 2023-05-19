@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const About = () => {
     return (
       <div>
-        <h1 className="text-center text-2xl pt-10 pb-5">About Us</h1>
+        <h1 className="text-center text-2xl pt-10 ">About Us</h1>
          <div className=" flex flex-col-reverse lg:flex-row-reverse lg:justify-evenly py-10 lg:mx-10">
          <div className="hero w-fit  rounded-lg" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1122&q=80")` }}>
             <div className=" hero-overlay rounded-lg bg-opacity-60"></div>
@@ -18,7 +18,7 @@ const About = () => {
             </div>
         </div>
         <div className="">
-            <img className=" rounded-lg" src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG95fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=600&q=60" alt="" />
+            <img className=" rounded-lg" src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG95fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=600&q=60" alt="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG95fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=600&q=60" />
         </div>
        </div>
       </div>
