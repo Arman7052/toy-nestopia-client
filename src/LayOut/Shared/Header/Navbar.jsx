@@ -17,11 +17,24 @@ const Navbar = () => {
   const navItems = <>
     <li> <Link to='/'>Home</Link>  </li>
     <li> <Link to='/blog'>Blog</Link>  </li>
-    <li> <Link to='/about'>About Us</Link>  </li>
+    <li><Link to='/alltoys'>All toys</Link></li>
+  
     <li> {user &&
-      <Link to='/login'>
+      <Link to='/addtoy'>
+        Add a toy
+      </Link>}
+    </li>
+    <li> {user &&
+      <Link to='/mytoys'>
+        My toys
+      </Link>}
+    </li>
+    
+    <li> {user &&
+      <Link to='/'>
         <img src={user.photoURL} alt="User Profile" className="h-8 w-8 rounded-full" />
-      </Link>}</li>
+      </Link>}
+    </li>
   </>
 
   return (
