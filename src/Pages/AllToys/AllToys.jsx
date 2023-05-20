@@ -1,3 +1,5 @@
+import "aos/dist/aos.css";
+import AOS from "aos";
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import logo from '../../assets/logo_s.png';
@@ -9,10 +11,14 @@ const AllToys = () => {
     const [displayedToys, setDisplayedToys] = useState([]);
 
     useEffect(() => {
+        AOS.init();
+    }, []);
+
+    useEffect(() => {
         fetch('http://localhost:5000/allToys')
-        .then(res => res.json())
-        .then(data => setAllToys(data));
-    },[]);
+            .then(res => res.json())
+            .then(data => setAllToys(data));
+    }, []);
 
     useEffect(() => {
         setDisplayedToys(showAll ? allToys : allToys.slice(0, 4));
@@ -28,7 +34,7 @@ const AllToys = () => {
 
     return (
         <>
-            <div className="py-5">
+            <div className="py-5" data-aos="fade-up">
                 <Marquee speed={100}>
                     <h1 className="text-center text-2xl font-bold italic py-10">Our Collection's</h1>
                     <img src={logo} alt="" />
@@ -40,6 +46,7 @@ const AllToys = () => {
                     <Toys
                         key={toys._id}
                         toys={toys}
+                        data-aos="fade-left"
                     />
                 ))}
             </div>
@@ -48,6 +55,7 @@ const AllToys = () => {
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         onClick={handleShowMore}
+                        data-aos="fade-left"
                     >
                         Show More
                     </button>
@@ -58,6 +66,7 @@ const AllToys = () => {
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         onClick={handleShowLess}
+                        
                     >
                         Show Less
                     </button>
@@ -68,11 +77,5 @@ const AllToys = () => {
 };
 
 export default AllToys;
-
-
-
-
-
-
 
 
