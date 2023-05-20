@@ -76,38 +76,3 @@ export default AllToys;
 
 
 
-
-// import Marquee from "react-fast-marquee";
-// import logo from '../../assets/logo_s.png';
-
-
-// import { useEffect, useState } from "react";
-// import Toys from "./Toys";
-
-// const AllToys = () => {
-//     const [allToys, setAllToys] = useState([]);
-
-//     useEffect(() => {
-//         fetch('http://localhost:5000/allToys')
-//         .then(res => res.json())
-//         .then(data => setAllToys(data));
-//     },[])
-
-//     return (
-//         <>
-//             <div className=" py-5">
-//                 <Marquee speed={100}> <span ><h1 className="text-center text-2xl font-bold italic py-10">Our Collection's</h1></span> <span ><img src={logo} alt="" /></span> <span ><h1 className="text-center text-2xl font-bold italic py-10">Our Collection's</h1></span></Marquee>
-//             </div>
-//             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-//                 {
-//                     allToys.map(toys => <Toys
-//                     key={toys._id}
-//                     toys={toys}
-//                     ></Toys>)
-//                 }
-//             </div>
-//         </>
-//     );
-// };
-
-// export default AllToys;
