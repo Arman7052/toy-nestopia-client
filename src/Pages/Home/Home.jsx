@@ -1,4 +1,4 @@
-import AllToys from "../AllToys/AllToys";
+import Toyslist from "../AllToys/Toyslist";
 import About from "./About";
 import Banner from "./Banner";
 
@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <AllToys></AllToys>
+            <Toyslist></Toyslist>
             <About></About>
         </div>
     );
