@@ -6,24 +6,24 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddToy = () => {
     const { register, handleSubmit } = useForm();
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const onSubmit = (data) => {
 
         console.log(data);
         // You can perform further actions with the form data, such as sending it to an API or storing it in a state.
 
-        fetch('http://localhost:5000/allToys' ,{
+        fetch('http://localhost:5000/allToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     };
 
     return (
@@ -42,7 +42,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="name"
-                                
+
                                 {...register("name")}
                                 className="form-input rounded-md mx-2 h-10 text-indigo-600 px-2  "
                                 required
@@ -60,7 +60,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="picture_url"
-                                
+
                                 {...register("picture_url")}
                                 className="form-input rounded-md mx-2 h-10 text-indigo-600 px-2  "
                                 required
@@ -134,6 +134,24 @@ const AddToy = () => {
                             />
                         </div>
                     </div>
+                    <div className="mb-4">
+                        <div>
+                            <label htmlFor="rating" className="form-label text-xl">
+                                Rating(1 to 5):
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                type="number"
+                                id="rating"
+                                {...register("rating", { min: 1, max: 5 })}
+                                className="form-input rounded-md mx-2 h-10 text-indigo-600 px-2"
+
+                                required
+                            />
+                        </div>
+                    </div>
+
                     <div className="mb-4">
                         <div>
                             <label htmlFor="available_quantity" className="form-label text-xl">
