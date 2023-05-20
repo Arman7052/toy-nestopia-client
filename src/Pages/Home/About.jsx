@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const About = () => {
     return (
       <div>
-        <h1 className="text-center text-2xl pt-10 ">About Us</h1>
+        <h1 className="text-center text-2xl pt-10 italic">About Us</h1>
          <div className=" flex flex-col-reverse lg:flex-row-reverse lg:justify-evenly py-10 lg:mx-10">
          <div className="hero w-fit  rounded-lg" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1122&q=80")` }}>
             <div className=" hero-overlay rounded-lg bg-opacity-60"></div>
