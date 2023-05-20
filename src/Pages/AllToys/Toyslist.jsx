@@ -37,7 +37,7 @@ const Toyslist = () => {
           <Toys
             key={toys._id}
             toys={toys}
-            data-aos="fade-left"
+            data-aos="fade-down" 
           />
         ))}
       </div>

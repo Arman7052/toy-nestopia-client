@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
@@ -22,7 +23,7 @@ const Footer = () => {
 
             <div >
                 <div> <span className="footer-title ">Find us on</span></div>
-                <div className='flex flex-row justify-between gap-2 py-4'>
+                <div className='flex flex-row justify-between gap-2 py-4' >
                     <div> <FaFacebook></FaFacebook>  </div>
                     <div><FaInstagram></FaInstagram> </div>
                     <div><FaYoutube></FaYoutube></div>

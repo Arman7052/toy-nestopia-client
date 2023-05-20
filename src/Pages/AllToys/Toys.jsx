@@ -1,9 +1,17 @@
-
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { useEffect } from "react";
 
 const Toys = ({ toys }) => {
     const { name, picture_url } = toys;
+
+    useEffect(() => {
+        AOS.init();
+      }, []);
+    
+    
     return (
-        <div>
+        <div data-aos="fade-right" data-aos-delay="400">
 
             <div className="card w-72 h-72 bg-base-100 mx-auto ">
                 <figure className=""><img className=" rounded-xl w-full h-32" src={picture_url} alt={picture_url} /></figure>

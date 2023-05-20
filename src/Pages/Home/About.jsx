@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
     <div>
-      <h1 className="text-center text-2xl pt-10 italic">About Us</h1>
+      <h1 className="text-center text-2xl pt-10 italic" data-aos="fade-right" data-aos-delay="600">About Us</h1>
       <div
         className="flex flex-col-reverse lg:flex-row-reverse lg:justify-evenly py-10 lg:mx-10"
         data-aos="fade-up"
@@ -52,7 +53,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="" data-aos="fade-up" data-aos-delay="600">
+        <div className="" data-aos="fade-down" data-aos-delay="600">
           <img
             className="rounded-lg"
             src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG95fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=600&q=60"
