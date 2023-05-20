@@ -1,8 +1,8 @@
-
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddToy = () => {
     const { register, handleSubmit } = useForm();
@@ -10,20 +10,22 @@ const AddToy = () => {
 
     const onSubmit = (data) => {
 
-        console.log(data);
-        // You can perform further actions with the form data, such as sending it to an API or storing it in a state.
-
-        fetch('http://localhost:5000/allToys', {
-            method: 'POST',
+        fetch("http://localhost:5000/allToys", {
+            method: "POST",
             headers: {
-                'content-type': 'application/json'
+                "content-type": "application/json",
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
         })
-            .then(res => res.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
                 console.log(data);
+                toast.success("Wow !!! Toy added successfully!");
             })
+            .catch((error) => {
+                console.error(error);
+                toast.error("Sorry, failed to add toy.");
+            });
     };
 
     return (
@@ -31,11 +33,13 @@ const AddToy = () => {
             <h2 className="text-2xl font-bold py-10">Add Toy</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
+
+
                 <div className=" grid grid-cols-1 lg:grid-cols-2">
                     <div className="mb-4">
                         <div>
                             <label htmlFor="name" className="form-label text-xl">
-                                Name:
+                                Toy Name:
                             </label>
                         </div>
                         <div>
@@ -183,12 +187,16 @@ const AddToy = () => {
                         ></textarea>
                     </div>
                 </div>
+
+
+
                 <div className="mt-6 py-10">
-                    <button type="submit" className="btn btn-success bg-inherit  ">
+                    <button type="submit" className="btn btn-success bg-inherit">
                         Add Toy
                     </button>
                 </div>
             </form>
+            <ToastContainer />
         </div>
     );
 };
