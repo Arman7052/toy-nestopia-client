@@ -20,7 +20,7 @@ const Toyslist = () => {
   }, []);
 
   useEffect(() => {
-    setDisplayedToys(allToys.slice(0, 8));
+    setDisplayedToys(allToys);
   }, [allToys]);
 
   return (
