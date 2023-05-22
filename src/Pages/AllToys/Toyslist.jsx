@@ -38,11 +38,11 @@ const Toyslist = () => {
           <Toys
             key={toys._id}
             toys={toys}
-            data-aos="fade-down" 
+            data-aos="fade-down"
           />
         ))}
       </div>
-      
+
     </>
   );
 };

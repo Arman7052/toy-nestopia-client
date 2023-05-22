@@ -88,7 +88,7 @@ const router = createBrowserRouter([
           ) 
         },
         {
-          path:'/toy/:id',
+          path:'/toy',
           element: (
             <>
               <Helmet>
