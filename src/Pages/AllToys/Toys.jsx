@@ -11,7 +11,7 @@ const Toys = ({ toys }) => {
     
     
     return (
-        <div data-aos="fade-right" data-aos-delay="400">
+        <div className=" my-10" data-aos="fade-down" data-aos-delay="400">
 
             <div className="card w-72 h-72 bg-base-100 mx-auto ">
                 <figure className=""><img className=" rounded-xl w-full h-32" src={picture_url} alt={picture_url} /></figure>

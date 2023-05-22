@@ -1,15 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const ShopByCategory = () => {
   const categories = [
-
-
-
-
-
-
     {
       name: 'Math',
       subcategories: [
@@ -83,15 +80,26 @@ const ShopByCategory = () => {
 
   const handleMainTabChange = (index) => {
     setActiveMainTab(index);
-    setActiveSubTab(0); // Reset subtab selection when main tab changes
+    setActiveSubTab(0);
   };
 
   const handleSubTabChange = (index) => {
     setActiveSubTab(index);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      
+      mirror: true,
+    });
+  }, []);
+
+
   return (
-    <div className="container p-5 mx-auto text-center">
+    <div className="container p-5 my-10 mx-auto text-center">
+      <h1 className=' font-mono font-bold text-2xl italic py-5' data-aos="fade-up"> Shop By Catagory</h1>
       <Tabs selectedIndex={activeMainTab} className=' shadow-2xl p-5' onSelect={handleMainTabChange}>
         <TabList className="flex justify-center mb-4">
           <Tab
@@ -132,7 +140,7 @@ const ShopByCategory = () => {
                       <h2 className="text-2xl font-bold mb-2">{subcategory.name}</h2>
                       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
                         {subcategory.toys.map((toy, toyIndex) => (
-                          <div key={toyIndex} className="p-4 shadow rounded-lg">
+                          <div key={toyIndex} className="p-4 shadow rounded-lg" data-aos="fade-left"> 
                             <div className="card w-96 bg-base-100 shadow-xl">
                               <div className="card-image">
                                 <img src={toy.picture} alt={toy.name} className="h-64 rounded-lg w-full object-cover" />
@@ -142,7 +150,7 @@ const ShopByCategory = () => {
                                 <p>{toy.price}</p>
                                 <p>Rating: {toy.rating}</p>
                                 <div className="card-actions justify-end">
-                                  <button className="btn btn-primary">View Details</button>
+                                  <button className="btn btn-ghost underline"> <Link to='/toy/:id'> View Details</Link></button>
                                 </div>
                               </div>
                             </div>
@@ -161,7 +169,7 @@ const ShopByCategory = () => {
           </TabPanel>
 
           <TabPanel key={1}>
-            {/* Content for the Outdoor tab */}
+            
             <Tabs selectedIndex={activeSubTab} onSelect={handleSubTabChange}>
               <TabList className="flex justify-center mb-4">
                 {categories.map((category, index) => (
@@ -182,7 +190,7 @@ const ShopByCategory = () => {
                       <h2 className="text-2xl font-bold mb-2">{subcategory.name}</h2>
                       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
                         {subcategory.toys.map((toy, toyIndex) => (
-                          <div key={toyIndex} className="p-4 shadow rounded-lg">
+                          <div key={toyIndex} className="p-4 shadow rounded-lg" data-aos="fade-left">
                             <div className="card w-96 bg-base-100 shadow-xl">
                               <div className="card-image">
                                 <img src={toy.picture} alt={toy.name} className="h-64 rounded-lg w-full object-cover" />
@@ -192,7 +200,7 @@ const ShopByCategory = () => {
                                 <p>{toy.price}</p>
                                 <p>Rating: {toy.rating}</p>
                                 <div className="card-actions justify-end">
-                                  <button className="btn btn-primary">View Details</button>
+                                  <button className="btn btn-ghost underline"> <Link to='/toy/:id'> View Details</Link></button>
                                 </div>
                               </div>
                             </div>
