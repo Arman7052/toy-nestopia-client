@@ -31,7 +31,9 @@ const AllToys = () => {
     setSearchQuery(event.target.value);
   };
 
-  
+  const handleShowAll = () => {
+    setDisplayedToys(allToys);
+  };
 
   return (
     <div className="">
@@ -41,12 +43,14 @@ const AllToys = () => {
           placeholder="Search by Toy Name"
           value={searchQuery}
           onChange={handleSearchQueryChange}
-          className=" h-12 rounded-lg p-4"
+          className="h-12 rounded-lg p-4"
         />
-        <button className=" mx-4 btn btn-ghost" onClick={handleSearch}>Search</button>
-       
+        <button className="mx-4 btn btn-ghost" onClick={handleSearch}>
+          Search
+        </button>
+        
+
         <table className="table w-full mt-5">
-          {/* head*/}
           <thead>
             <tr>
               <th>Seller</th>
@@ -58,13 +62,16 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
             {displayedToys.map((toystable) => (
               <AllToyTable key={toystable._id} toystable={toystable} />
             ))}
           </tbody>
         </table>
+        <button className="btn btn-primary btn-block" onClick={handleShowAll}>
+          Show All
+        </button>
       </div>
+      
     </div>
   );
 };

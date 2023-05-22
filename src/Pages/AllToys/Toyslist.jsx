@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 import logo from '../../assets/logo_s.png';
 import Toys from "./Toys";
 
+
 const Toyslist = () => {
   const [allToys, setAllToys] = useState([]);
   const [displayedToys, setDisplayedToys] = useState([]);
@@ -41,6 +42,7 @@ const Toyslist = () => {
           />
         ))}
       </div>
+      
     </>
   );
 };

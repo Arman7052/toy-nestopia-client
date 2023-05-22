@@ -1,3 +1,5 @@
+
+
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../LayOut/Main";
 import Home from "../Pages/Home/Home";
@@ -11,6 +13,7 @@ import AddToy from "../Pages/AddToy/AddToy";
 import ToyDetails from "../Pages/AllToys/ToyDetails";
 import Error from "../Pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
+import { Helmet } from "react-helmet";
 
 const router = createBrowserRouter([
     {
@@ -20,31 +23,80 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <Home></Home>
+            element:  (
+              <>
+                <Helmet>
+                  <title>Toy Nestopia | Home</title>
+                </Helmet>
+                <Home></Home>
+              </>
+            )
         },
         {
           path: '/login',
-          element: <Login></Login>
+          element: (
+            <>
+              <Helmet>
+                <title>Toy Nestopia|Login</title>
+              </Helmet>
+              <Login></Login>
+            </>
+          )
         },
         {
           path: '/register',
-          element: <Register></Register>
+          element:(
+            <>
+              <Helmet>
+                <title>Toy Nestopia|Register</title>
+              </Helmet>
+              <Register></Register> 
+            </>
+          )
         },
         {
           path:'/allToys',
-          element: <AllToys></AllToys>
+          element: (
+            <>
+              <Helmet>
+                <title>Toy Nestopia|AllToys</title>
+              </Helmet>
+              <AllToys></AllToys>
+            </>
+          )
         },
         {
           path:'/mytoys',
-          element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+          element: (
+            <>
+              <Helmet>
+                <title>Toy Nestopia|MyToys</title>
+              </Helmet>
+              <PrivateRoute><MyToys></MyToys></PrivateRoute>
+            </>
+          ) 
         },
         {
           path:'/addtoy',
-          element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+          element: (
+            <>
+              <Helmet>
+                <title>Toy Nestopia|AddToy</title>
+              </Helmet>
+              <PrivateRoute><AddToy></AddToy></PrivateRoute>
+            </>
+          ) 
         },
         {
           path:'/toy/:id',
-          element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
+          element: (
+            <>
+              <Helmet>
+                <title>Toy Nestopia|ToyDetails</title>
+              </Helmet>
+              <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
+            </>
+          ) 
         }
       ]
     },
@@ -52,11 +104,25 @@ const router = createBrowserRouter([
    
     {
         path:'/blog',
-        element: <Blog></Blog>
+        element: (
+          <>
+            <Helmet>
+              <title>Toy Nestopia|Blog</title>
+            </Helmet>
+            <Blog></Blog>
+          </>
+        ) 
     },
     {
         path:'/about',
-        element: <AboutUs></AboutUs>
+        element: (
+          <>
+            <Helmet>
+              <title>Toy Nestopia|AboutUs</title>
+            </Helmet>
+            <AboutUs></AboutUs>
+          </>
+        ) 
     },
     {},
     {},
