@@ -6,15 +6,13 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys?email=${user.email}`)
+    fetch(`http://localhost:5000/allToys?${user.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
         setMyToys(data);
       })
-      .catch(error => {
-        console.error(error);
-      });
+      
   }, []);
 
   return (
