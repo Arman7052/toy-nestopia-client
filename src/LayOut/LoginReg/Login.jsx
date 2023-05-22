@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FaGoogle } from 'react-icons/fa';
 import { useContext } from "react";
@@ -6,19 +6,23 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
-    const { logIn, signInWithGoogle } = useContext(AuthContext)
+    const { logIn, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        const from = location.state?.from?.pathname || '/'
         console.log(email, password);
 
         logIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true })
             })
             .then(error => console.log(error))
 
