@@ -13,7 +13,7 @@ const AllToyTable = ({ toystable }) => {
                 <td>{sub_category}</td>
                 <td>{price}</td>
                 <td>{available_quantity}</td>
-                <td><Link to="/" className=" underline underline-offset-auto">View Details</Link></td>
+                <td><Link to="/toy/:id" className=" underline underline-offset-auto">View Details</Link></td>
                 
                 
                 </tr>
